@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
 import { View } from "react-native";
 import { CustomCarousel, Hero } from "@components";
-import { CityService } from "@services";
-
+import { useCities } from "src/hooks/useCities";
 
 const HomeScreen = () => {
 
-  const [cities, setCities] = useState([]);
-  
-  useEffect(() => {
-    CityService.getCities().then(setCities), [];
-  });
+  const { getCities } = useCities();
 
   return (
     <View>
@@ -18,7 +12,7 @@ const HomeScreen = () => {
         title="MyTinerary"
         subTitle="Your perfect trip, just a click away."
       />
-      <CustomCarousel cities={cities} />
+      <CustomCarousel cities={getCities.data} />
     </View>
   );
 };

@@ -1,9 +1,10 @@
 import { View, Text, Image, StyleSheet } from "react-native";
 import React, { useEffect } from "react";
 import { useLocalSearchParams, useNavigation } from "expo-router";
+import { ICity } from "src/types/ICity";
 
 const CityDetailScreen = () => {
-  const city = useLocalSearchParams();
+  const city: ICity = useLocalSearchParams() as any;
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -14,6 +15,7 @@ const CityDetailScreen = () => {
     <View style={styles.container}>
       <Text style={styles.title}>{city.name}</Text>
       <Image style={styles.image} source={{ uri: city.url as string }} />
+      <Text style={styles.description}>{city.description}</Text>
     </View>
   );
 };
@@ -22,11 +24,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "bold",
-    borderBottomWidth: 1,
-    borderColor: 'gray',
-    color: 'gray',
     marginBottom: 20,
-    paddingBottom: 5
+    paddingBottom: 5,
+  },
+  description: {
+    marginTop: 20,
+    paddingBottom: 5,
   },
   image: {
     width: "100%",
