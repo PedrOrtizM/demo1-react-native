@@ -1,9 +1,10 @@
-import { useIsFetching } from "@tanstack/react-query";
 import { ActivityIndicator, View } from "react-native";
+import { useAxiosInterceptor } from "src/hooks/useInterceptor";
 
 export const Loader = () => {
-  const isFetching = useIsFetching();
-  if (isFetching > 0) {
+  const { value } = useAxiosInterceptor();
+  
+  if (value > 0) {
     return (
       <View
         style={{
@@ -16,7 +17,7 @@ export const Loader = () => {
           justifyContent: "center",
           alignItems: "center",
         }}>
-        <ActivityIndicator size="large" color="#333333"/>
+        <ActivityIndicator size="large" color="#6662de"/>
       </View>
     );
   }

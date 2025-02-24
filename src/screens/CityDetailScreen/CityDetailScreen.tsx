@@ -1,7 +1,7 @@
-import { View, Text, Image, StyleSheet } from "react-native";
-import React, { useEffect } from "react";
 import { useLocalSearchParams, useNavigation } from "expo-router";
-import { ICity } from "src/types/ICity";
+import { View, Text, Image, StyleSheet } from "react-native";
+import { useEffect } from "react";
+import { ICity } from "@types";
 
 const CityDetailScreen = () => {
   const city: ICity = useLocalSearchParams() as any;

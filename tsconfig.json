@@ -4,7 +4,8 @@
     "paths": {
       "@screens": ["src/screens/index.tsx"],
       "@components": ["src/components/index.tsx"],
-      "@services": ["src/services/index.tsx"]
+      "@services": ["src/services/index.ts"],
+      "@types": ["src/types/index.ts"]
     }
   },
   "extends": "expo/tsconfig.base"

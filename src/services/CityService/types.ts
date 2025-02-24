@@ -1,9 +1,3 @@
-export interface IBase<T> {
-  status: number;
-  statusMsg: string;
-  data: T[];
-}
-
 export interface ICityResponse {
   _id: string;
   name: string;

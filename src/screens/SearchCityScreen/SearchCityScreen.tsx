@@ -7,11 +7,11 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "expo-router";
-import { CityCard } from "@components";
 import { useCities } from "src/hooks/useCities";
-import { ICity } from "src/types/ICity";
+import { CityCard } from "@components";
+import { ICity } from "@types";
 
-const CitiesScreen = () => {
+const SearchCityScreen = () => {
 
   const router = useRouter();
   const [citiesFiltered, setCitiesFiltered] = useState<ICity[]>([]);
@@ -39,6 +39,7 @@ const CitiesScreen = () => {
       />
 
       <FlatList
+        style={ styles.containerList }
         data={citiesFiltered}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
@@ -62,6 +63,9 @@ const styles = StyleSheet.create({
   list: {
     alignItems: "center",
   },
+  containerList:{
+    marginBottom: 100
+  },
   searchText: {
     margin: 20,
     height: 48,
@@ -74,4 +78,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CitiesScreen;
+export default SearchCityScreen;
