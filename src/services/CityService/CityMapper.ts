@@ -1,10 +1,10 @@
 import { AxiosResponse } from "axios";
-import { IBase, ICityResponse } from "./types";
-import { ICity } from "src/types/ICity";
+import { ICity, IBaseHttp } from "@types";
+import { ICityResponse } from "./types";
 
 export class CityMapper {
 
-  static format(response: AxiosResponse<IBase<ICityResponse>>): ICity[] {
+  static format(response: AxiosResponse<IBaseHttp<ICityResponse[]>>): ICity[] {
     return response?.data?.data?.map(({ _id: id, name, image: url, description }) => ({
       id,
       name,

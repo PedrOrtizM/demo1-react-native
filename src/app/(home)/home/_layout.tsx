@@ -1,9 +1,8 @@
-import React from "react";
 import { Tabs } from "expo-router";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 
-const TaLayout = () => {
+const TabLayout = () => {
   return (
     <Tabs>
       <Tabs.Screen
@@ -14,7 +13,7 @@ const TaLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="cities"
+        name="search"
         options={{
           title: "Cities",
           tabBarIcon: () => (
@@ -22,8 +21,18 @@ const TaLayout = () => {
           ),
         }}
       />
+       <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+          tabBarIcon: () => (
+            <FontAwesome name="user" size={24} color="black" />
+          ),
+        }}
+      />
+
     </Tabs>
   );
 };
 
-export default TaLayout;
+export default TabLayout;
