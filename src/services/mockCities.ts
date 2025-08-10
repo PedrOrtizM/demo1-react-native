@@ -1,3 +1,8 @@
+export interface City {
+  name: string;
+  url: string;
+}
+
 export const mockCities = [
   {
     name: 'New York',
