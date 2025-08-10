@@ -1,9 +1,8 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 
-export const Card = ({ title, url }) => {
-
+const Card = ({ title, url }) => {
   return (
-    <View style={styles.card}>
+    <View>
       <Image resizeMode="cover" source={{ uri: url }} style={styles.logo} />
       <Text style={styles.title}>{title}</Text>
     </View>
@@ -16,8 +15,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   logo: {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
     marginTop: 10,
-  }
+  },
 });
+
+export default Card; 

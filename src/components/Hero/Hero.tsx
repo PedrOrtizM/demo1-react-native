@@ -1,8 +1,9 @@
 import { View, Text, Button, StyleSheet } from "react-native";
 
-export const Hero = ({ title, subTitle }) => {
+const Hero = ({ title, subTitle, userName }) => {
   return (
-    <View style={styles.container} >
+    <View style={styles.container}>
+      <Text style={styles.name}>Hola { userName } </Text>
       <Text style={styles.title}>{title} </Text>
       <Text style={styles.subTitle}> {subTitle} </Text>
       <Button title="Explore" />
@@ -12,13 +13,19 @@ export const Hero = ({ title, subTitle }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 30,
+    margin: 30,
+  },
+  name: {
+    fontSize: 20,
+    marginBottom: 20
   },
   title: {
     fontWeight: "bold",
     fontSize: 30,
   },
   subTitle: {
-    marginBottom: 20
-  }
-})
+    marginBottom: 30,
+  },
+});
+
+export default Hero;
