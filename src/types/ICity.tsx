@@ -1,5 +1,6 @@
 export interface ICity {
-  id: number;
+  id: string;
   name: string;
   url: string;
+  description: string;
 }
