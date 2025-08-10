@@ -1,13 +1,15 @@
-import { View } from "react-native";
-import { Hero } from "../components/Hero";
-import { CustomCarousel } from "../components/Carousel";
-import { getCities } from "../services/CityService";
 import { useEffect, useState } from "react";
+import { View } from "react-native";
+import { CustomCarousel, Hero } from "@components";
+import { CityService } from "@services";
 
-export const Home = () => {
+
+const HomeScreen = () => {
+
   const [cities, setCities] = useState([]);
+  
   useEffect(() => {
-    getCities().then(setCities), [];
+    CityService.getCities().then(setCities), [];
   });
 
   return (
@@ -20,3 +22,5 @@ export const Home = () => {
     </View>
   );
 };
+
+export default HomeScreen;

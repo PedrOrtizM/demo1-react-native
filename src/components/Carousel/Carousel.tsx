@@ -1,10 +1,11 @@
 import Carousel from "react-native-reanimated-carousel";
 import { CarouselRenderItemInfo } from "react-native-reanimated-carousel/lib/typescript/types";
 import { View, Dimensions, StyleSheet } from "react-native";
-import { Card } from "./Card";
-import { City } from "../services/mockCities";
+import { City } from "../../services/CityService/mockCities";
+import Card from "./components/Card/Card";
 
-export const CustomCarousel = ({ cities }) => {
+
+const CustomCarousel = ({ cities }) => {
   const width = Dimensions.get("window").width;
 
   return (
@@ -34,3 +35,5 @@ const styles = StyleSheet.create({
     minHeight: 300,
   },
 });
+
+export default CustomCarousel;
